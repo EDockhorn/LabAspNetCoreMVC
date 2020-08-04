@@ -15,24 +15,23 @@ namespace CursoDominandoAspNetCore.Controllers
         [Route("pagina-inicial")]
         [Route("pagina-inicial/{id:int}/{categoria?}")]
         
-        
         public IActionResult Index(int id, string categoria)
         {
             var Movie = new Movie()
             {
-                Title = "OI",
+                Title = "TITULO",
                 ReleaseDate = DateTime.Now,
-                Genre = null,
-                Rating = "10",
-                Price = "20000"
+                Genre = "COMEDIA",
+                Rating = 10,
+                Price = 20000
             };
-            //return RedirectToAction("Privacy", Movie);
             return View();
         }
 
         [Route("privacidade")]
         [Route("politica-privacidade")]
         [HttpPost("")]
+
         public IActionResult Privacy(Movie movie)
         {
             if (ModelState.IsValid)
@@ -46,6 +45,12 @@ namespace CursoDominandoAspNetCore.Controllers
             }
 
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Salvar()
+        {
+            return Ok();
         }
 
         [Route("erro-Encontrado")]

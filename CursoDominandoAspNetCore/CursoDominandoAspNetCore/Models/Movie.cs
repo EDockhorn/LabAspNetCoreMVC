@@ -6,6 +6,14 @@ namespace CursoDominandoAspNetCore.Models
 {
     public class Movie
     {
+        public Movie()
+        {
+            Title = "TITULO";
+            ReleaseDate = DateTime.Now;
+            Genre = "COMEDIA";
+            Rating = 10;
+            Price = 20000;
+        }
         [Key]
         public int ID { get; set; }
         [StringLength(60, MinimumLength = 3), Required(ErrorMessage = "O campo Título é requerido")]
@@ -19,7 +27,7 @@ namespace CursoDominandoAspNetCore.Models
         [Range(1, 100)]
         [DataType(DataType.Currency)]
         [Column(TypeName = "decimal(18,2)")]
-        public string Price { get; set; }
+        public double Price { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z]*$", ErrorMessage = "Gênero em formato inválido")]
         [Required]
@@ -27,8 +35,7 @@ namespace CursoDominandoAspNetCore.Models
         public string Genre { get; set; }
 
         [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
-        [StringLength(5)]
         [Required]
-        public string Rating { get; set; }
+        public int Rating { get; set; }
     }
 }
