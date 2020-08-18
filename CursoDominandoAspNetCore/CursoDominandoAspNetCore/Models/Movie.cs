@@ -6,14 +6,16 @@ namespace CursoDominandoAspNetCore.Models
 {
     public class Movie
     {
-        public Movie()
-        {
-            Title = "TITULO";
-            ReleaseDate = DateTime.Now;
-            Genre = "COMEDIA";
-            Rating = 10;
-            Price = 20000;
-        }
+        //public Movie()
+        //{
+        //    Title = "TITULO";
+        //    ReleaseDate = DateTime.Now;
+        //    Genre = "COMEDIA";
+        //    Rating = 10;
+        //    Price = 20000;
+        //}
+
+
         [Key]
         public int ID { get; set; }
         [StringLength(60, MinimumLength = 3), Required(ErrorMessage = "O campo Título é requerido")]
@@ -34,7 +36,7 @@ namespace CursoDominandoAspNetCore.Models
         [StringLength(30, MinimumLength = 3, ErrorMessage = "Máximo de 30 caracteres")]
         public string Genre { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
+        //[RegularExpression(@"^[A-Z]+[a-zA-Z0-9""'\s-]*$")]
         [Required]
         public int Rating { get; set; }
     }

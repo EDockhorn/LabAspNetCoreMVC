@@ -10,9 +10,18 @@ namespace CursoDominandoAspNetCore.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Adicionar(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                //
+            }
+            return View(movie);
+        }
 
         [HttpPost]
-        public IActionResult Salvar(Movie movie)
+        public IActionResult Salvar(int ID)
         {
             if (!ModelState.IsValid)
             {
@@ -22,7 +31,7 @@ namespace CursoDominandoAspNetCore.Controllers
             {
                 return Ok();
             }
-            
+
         }
     }
 }
