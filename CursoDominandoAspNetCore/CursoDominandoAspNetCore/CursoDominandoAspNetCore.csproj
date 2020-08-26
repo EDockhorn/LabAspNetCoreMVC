@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\Movie\Adicionar.cshtml">
+    <Content Update="Views\Movie_bkp\Adicionar.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
   </ItemGroup>
